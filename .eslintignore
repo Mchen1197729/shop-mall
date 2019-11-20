@@ -1,0 +1,9 @@
+/build/
+/config/
+/dist/
+/*.js
+/test/unit/coverage/
+
+#chenMM添加的eslint忽略检测的文件后缀名(上线的时候记得删除)
+*.vue
+*.js
