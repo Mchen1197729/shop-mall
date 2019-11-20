@@ -1,13 +1,12 @@
 # vue_jshop
 
 > A Vue.js project
-
-## Build Setup
+``` bash
 #修改端口号
 -文件位置
 /config/index.js中的host配置
+## Build Setup
 
-``` bash
 # install dependencies
 npm install
 
