@@ -13,7 +13,7 @@
     <div class="price-salesvolume">
       <div class="price">
         <h2>￥{{ this.GLOBAL.formatMoney(product.price, 2, '') }}</h2>
-        <p>￥{{ product.mktprice }}</p>
+        <!--<p>￥{{ product.mktprice }}</p>-->
         <span class="demo-list-point-price">{{ 25142 }}</span>
         <span class="demo-list-self-sell">{{ '自营' }}</span>
       </div>
@@ -93,7 +93,8 @@
 <style>
   .demo-list-point-price{
     color: #DAA533;
-    font-size: .25rem;
+    font-size: .35rem;
+    font-weight: bold;
     margin-left: .2rem;
   }
   .demo-list-self-sell{

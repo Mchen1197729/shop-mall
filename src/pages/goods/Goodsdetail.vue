@@ -9,7 +9,7 @@
     <goodsstandard :spes="productSpes.default_spes_desc" @changeSpes="changeSpes"/>
     <goodsnum :stock="productSpes.stock" @num="goodsNum" :unit="goodsData.unit"/>
     <GoodsInfo/>
-    <PickGoods @goToAllPickShops="handleGoToAllPickShops" @showNearShop="handleShowNearShop"/>
+    <PickGoods @showPhoneNumber="handleShowPhoneNumber" @goToAllPickShops="handleGoToAllPickShops" @showNearShop="handleShowNearShop"/>
     <yd-tab>
       <yd-tab-panel label="图文详情">
         <ul v-html="goodsData.intro"></ul>
@@ -34,8 +34,7 @@
             <p>{{ item.ctime }} &nbsp;&nbsp;&nbsp;&nbsp;{{ item.addon }}</p>
             <p>{{ item.content }}</p>
             <yd-lightbox class="comment-imgs">
-              <yd-lightbox-img class="comment-img" v-for="(img, key) in item.images_url" :key="key"
-                               :src="img"></yd-lightbox-img>
+              <yd-lightbox-img class="comment-img" v-for="(img, key) in item.images_url" :key="key" :src="img"></yd-lightbox-img>
               <yd-lightbox-txt>
                 <h1 slot="top">
                   <div class="">
@@ -122,6 +121,10 @@
       }
     },
     methods: {
+      //显示联系电话
+      handleShowPhoneNumber(){
+
+      },
       //展示附近商家信息
       handleShowNearShop () {
         this.show2 = true

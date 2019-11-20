@@ -4,7 +4,7 @@
       <img src="../../static/image/hot.png"/>
       <!--<h3>店铺热卖</h3>-->
       <!--将店铺热卖改成商品列表-->
-      <h3>商品列表</h3>
+      <h3>热销商品</h3>
     </div>
     <yd-list theme="2" slot="list">
       <yd-list-item v-for="(item, key) in hotGoods" :key="key" type="link"

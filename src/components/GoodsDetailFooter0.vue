@@ -1,9 +1,9 @@
 <template>
   <div class="goodsdetailfooter">
     <div class="goodsdetailfooter-left">
-      <div class="customservice" @click="toToHomePage">
-        <img src="../../static/image/home.png"/>
-        <p>首页</p>
+      <div class="customservice" @click="showChat">
+        <img src="../../static/image/customservice.png"/>
+        <p>客服</p>
       </div>
       <div class="goods-cart" @click="collection" v-show="!is_fav">
         <img src="../../static/image/star.png"/>
@@ -47,10 +47,6 @@
       }
     },
     methods: {
-      //去首页
-      toToHomePage(){
-        this.$router.push('/')
-      },
       addCart () {
         this.$emit('addCart')
       },

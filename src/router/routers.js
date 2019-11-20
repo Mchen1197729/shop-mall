@@ -8,6 +8,7 @@
  */
 import ShopInfo from '../components/chenMM/ShopInfo'
 import NearShopList from '../components/chenMM/NearShopList'
+import AllPickShopList from '../components/chenMM/AllPickShopList'
 
 const routers = [
   {
@@ -547,6 +548,15 @@ const routers = [
     name: 'NearShopList',
     meta: {
       title: '附近商家',
+      tabShow: false,
+    },
+  },
+  {
+    path: '/allpickshops',
+    component: AllPickShopList,
+    name: 'AllPickShopList',
+    meta: {
+      title: '提货商家',
       tabShow: false,
     },
   }
