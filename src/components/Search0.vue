@@ -1,12 +1,12 @@
 <template>
   <div class="search">
-    <!--<router-link to="/searchpage">-->
+    <router-link to="/searchpage">
       <div class="search-input">
         <div class="location">
           镇江
           <img src="../../static/image/location.png" alt="">
         </div>
-        <form action="" @click="goToSearchPage" method="post">
+        <form action="" method="post">
           <i class="search-icon"></i>
           <input type="text" value="" placeholder="搜索商品"/>
         </form>
@@ -14,21 +14,9 @@
           <img src="../../static/image/scan.png"/>
         </div>
       </div>
-   <!-- </router-link>-->
+    </router-link>
   </div>
 </template>
-<script>
-  export default {
-    data(){
-      return{}
-    },
-    methods:{
-      goToSearchPage(){
-        this.$router.push('/searchpage')
-      }
-    }
-  }
-</script>
 
 <style type="text/css">
   .search .search-input {
@@ -46,8 +34,7 @@
     font-size: .3rem;
     font-weight: bold;
   }
-
-  .search .search-input .location img {
+  .search .search-input .location img{
     width: .4rem;
     height: .4rem;
   }

@@ -9,7 +9,8 @@
     <goodsstandard :spes="productSpes.default_spes_desc" @changeSpes="changeSpes"/>
     <goodsnum :stock="productSpes.stock" @num="goodsNum" :unit="goodsData.unit"/>
     <GoodsInfo/>
-    <PickGoods @showPhoneNumber="handleShowPhoneNumber" @goToAllPickShops="handleGoToAllPickShops" @showNearShop="handleShowNearShop"/>
+    <PickGoods @showPhoneNumber="handleShowPhoneNumber" @goToAllPickShops="handleGoToAllPickShops"
+               @showNearShop="handleShowNearShop"/>
     <yd-tab>
       <yd-tab-panel label="图文详情">
         <ul v-html="goodsData.intro"></ul>
@@ -23,46 +24,9 @@
         </ul>
         <ul v-else>没有详细参数</ul>
       </yd-tab-panel>
-      <yd-tab-panel class="comment" label="买家评论">
-        <ul>
-          <li v-for="(item, index) in comment" :key="index">
-            <div class="comment-info">
-              <img :src="item.user.avatar" alt="" class="user-img">
-              <p class="user-name">{{ item.user.nickname }}</p>
-              <yd-rate slot="left" v-model="item.score" :readonly="true" size=".2rem"></yd-rate>
-            </div>
-            <p>{{ item.ctime }} &nbsp;&nbsp;&nbsp;&nbsp;{{ item.addon }}</p>
-            <p>{{ item.content }}</p>
-            <yd-lightbox class="comment-imgs">
-              <yd-lightbox-img class="comment-img" v-for="(img, key) in item.images_url" :key="key" :src="img"></yd-lightbox-img>
-              <yd-lightbox-txt>
-                <h1 slot="top">
-                  <div class="">
-                    <p class="user-name">{{ item.user.nickname }}</p>
-                    <yd-rate slot="left" v-model="item.score" :readonly="true" size=".2rem"></yd-rate>
-                  </div>
-                </h1>
-                <div slot="content">
-
-                  <p>{{ item.content }}</p>
-                </div>
-                <div slot="bottom">
-                  <p>{{ item.ctime }}</p>
-                </div>
-              </yd-lightbox-txt>
-            </yd-lightbox>
-            <!--</div>-->
-          </li>
-          <li style="text-align: center">
-            <yd-button size="small" type="hollow" color="#F00" shape="circle" v-if="load" @click.native="loadMore">
-              加载更多评论
-            </yd-button>
-            <yd-button size="small" type="hollow" color="#AAA" shape="circle" v-else>没有更多评论了</yd-button>
-          </li>
-        </ul>
-      </yd-tab-panel>
     </yd-tab>
-    <goodsdetailfooter :is_fav="is_fav" :cart_nums="cart_nums" @collection="collection" @addCart="add" @buyNow="buyNow"/>
+    <goodsdetailfooter :is_fav="is_fav" :cart_nums="cart_nums" @collection="collection" @addCart="add"
+                       @buyNow="buyNow"/>
   </div>
 </template>
 
@@ -76,6 +40,7 @@
 
   import GoodsInfo from '../../components/chenMM/GoodsInfo'
   import PickGoods from '../../components/chenMM/PickGoods'
+  import {Dialog} from 'vant'
 
   export default {
     data () {
@@ -122,8 +87,15 @@
     },
     methods: {
       //显示联系电话
-      handleShowPhoneNumber(){
-
+      handleShowPhoneNumber () {
+        Dialog.confirm({
+          title: '商家电话',
+          message: '1788563217'
+        }).then(() => {
+          // on confirm
+        }).catch(() => {
+          // on cancel
+        })
       },
       //展示附近商家信息
       handleShowNearShop () {
