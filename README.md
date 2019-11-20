@@ -3,6 +3,9 @@
 > A Vue.js project
 
 ## Build Setup
+#修改端口号
+-文件位置
+/config/index.js中的host配置
 
 ``` bash
 # install dependencies
