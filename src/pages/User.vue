@@ -8,7 +8,7 @@
         <span slot="left">我的订单</span>
         <router-link slot="right" tag="span" to="/allorder">查看全部订单</router-link>
       </yd-cell-item>
-      <yd-grids-group :rows="4">
+      <yd-grids-group :rows="5">
         <yd-grids-item :link="{path: '/allorder', query: {tab: 1}}">
           <yd-badge slot="else" bgcolor="#fc0000" v-if="orderNum[1]">{{ orderNum[1] }}</yd-badge>
           <img slot="icon" src="../../static/image/unpaid.png">
@@ -27,6 +27,10 @@
         <yd-grids-item link="/allafterservice">
           <img slot="icon" src="../../static/image/returns.png">
           <span slot="text">退换货</span>
+        </yd-grids-item>
+        <yd-grids-item link="/allafterservice">
+          <img slot="icon" src="../../static/image/picking.png">
+          <span slot="text">待提货</span>
         </yd-grids-item>
       </yd-grids-group>
     </yd-cell-group>
